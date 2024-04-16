@@ -1,5 +1,6 @@
 import { useState } from "react"
 import Modal from './modal';
+import './modal.css'
 
 
 
@@ -12,10 +13,14 @@ export default function ModalTest(){
         setShowModalPopup(!showModalPopup);
     }
 
+    function onClose(){
+        setShowModalPopup(false);
+    }
+
     return <div>
         <button onClick={handleToggleModalPopup}>Open Modal popup</button>
         {
-            showModalPopup&&<Modal
+            showModalPopup&&<Modal onClose={onClose}
             body={<div>Customized body</div>}
             />
         }
