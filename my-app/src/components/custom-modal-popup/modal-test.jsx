@@ -22,6 +22,8 @@ export default function ModalTest(){
         {
             showModalPopup&&<Modal onClose={onClose}
             body={<div>Customized body</div>}
+            header={<div>Customized header</div>}
+            footer={<div>Customized footer</div>}
             />
         }
     </div>
