@@ -28,6 +28,12 @@ export default function SearchAutocomplete() {
         }
     }
 
+    function handleClick(event){
+        setShowDropdown(false);
+        setSearchParam(event.target.innerText);
+        setFilteredUsers([]);
+    }
+
 
     async function fetchListOfUsers() {
         try {
@@ -60,7 +66,7 @@ export default function SearchAutocomplete() {
     }
         
         {   
-            showDropdown &&<Suggestions data={filteredUsers}/>
+            showDropdown &&<Suggestions handleClick={handleClick} data={filteredUsers}/>
         }
     </div>
 }
